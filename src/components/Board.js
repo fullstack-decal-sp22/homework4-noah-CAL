@@ -4,10 +4,18 @@ import Square from "./Square";
 
 function Board() {
 
-    const status = 'Next player: X';
+    const [nextPlayer, setNextPlayer] = useState("X")
+    const updatePlayer = () => {
+      if (nextPlayer === "X") {
+        setNextPlayer("O")
+      } else {
+        setNextPlayer("X")
+      }
+    }
+    const status = `Next player: ${nextPlayer}`;
 
     function renderSquare(i) {
-        return <Square />;
+        return <Square nextPlayer={nextPlayer} setNextPlayer={updatePlayer} />;
     }
 
     return (  
