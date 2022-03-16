@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import './styles/Board.css';
 import Square from "./Square";
 

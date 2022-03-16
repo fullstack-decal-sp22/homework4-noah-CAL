@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import './styles/Square.css';
 
-function Square() {
+function Square(props) {
+    const [player, setPlayer] = useState("");
+
     return (
-        <button className="square">
+        <button className="square" onClick={() => setPlayer("O")}>
             {/* TODO */}
+            {console.log(props.number)}
+            {player}
         </button>
     )
 }
